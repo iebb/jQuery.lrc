@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href='http://fonts.lug.ustc.edu.cn/css?family=Alegreya+Sans:100,300' rel='stylesheet' type='text/css' />
+<script src="https://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js" ></script>
+<script src="./jQuery.lrc.js" ></script>
+<style type="text/css">body {color:white;font-family:'Alegreya Sans';}.lyric{font-family:'Alegreya Sans';font-size:40px;font-weight:300;line-height:1.0}.firstline{font-size:64px}.otherlines{color:#eeeeee};</style>
+</head>
+<body>
+<center>
+<h1 style="font-size:222px;font-weight:100; margin-top:0.2em;margin-bottom:0.1em;">jQuery.lrc Demo</h1>
+<audio controls="" name="media" id="music"><source id="music_src"></audio>
+<p style="font-size:30px">Select Music: <a onclick='load("http://picosong.com/media/songs/459903658fc8e47cd33b9ea060b8612c.mp3","sample/xepher.lrc");'>Tatsh - Xepher</a> | <a onclick='load("http://picosong.com/media/songs/8b71faa27417ccc276c1362d0af91f2e.mp3","sample/bienvenido.lrc");'>Laura Pausini - Bienvenido</a></p>
+<p class="lyric firstline"></p>
+<p class="lyric otherlines"></p>
+<p class="lyric otherlines"></p>
+<p class="lyric otherlines"></p>
+<p class="lyric otherlines"></p>
+
+<br/>
+</center>
+<script>
+
+	function load(sourceUrl, lrcUrl) {
+		var audio = $("#music");      
+		$("#music_src").attr("src", sourceUrl);
+		audio[0].pause();
+		audio[0].load();
+		audio[0].play();
+		audio.loadLrc('.lyric',lrcUrl);
+	}
+	
+	load("http://picosong.com/media/songs/459903658fc8e47cd33b9ea060b8612c.mp3",'sample/xepher.lrc');
+	
+	var j = 0;
+	setInterval(function(){
+		$('html').css('background-color','hsl('+j+', 50%, 75%)');
+		j++;
+	},100)
+</script>
+</body>
+</html>
