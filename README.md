@@ -1,6 +1,10 @@
 # jQuery.lrc
 jQuery Music Lyrics Plugin
 
+Demo:
+
+http://iebb.github.io/jQuery.lrc/
+
 ## How to use?
 
     $("#music").loadLrc('.lyric',lrcUrl);
